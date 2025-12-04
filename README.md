@@ -6,12 +6,18 @@ Solutions for [advent of code 2025](https://adventofcode.com/2025) in Go.
 
 Go is required which can be installed by following the instructions at <https://go.dev/doc/install>.
 
-## Usage
-
-To solve a certain day's puzzle (day 4 in the example) run the following from the root of this repository:
+With Go installed run:
 
 ```sh
-go run . -d 4 -p day4.txt
+go install github.com/mrzenioszeniou/adventofcode2025@latest
+```
+
+## Usage
+
+To solve a certain day's puzzle (day 4 in the example) run:
+
+```sh
+adventofcode2025 -d 4 -p day4.txt
 ```
 
 Where `day4.txt` contains your puzzle input for day 4.

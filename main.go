@@ -5,6 +5,7 @@ import (
 	"os"
 	"unicode/utf8"
 
+	aoc2025 "github.com/mrzenioszeniou/adventofcode2025/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -21,13 +22,13 @@ func main() {
 			var problem Day
 			switch dayArg {
 			case 1:
-				problem = &Day1{}
+				problem = &aoc2025.Day1{}
 			case 2:
-				problem = &Day2{}
+				problem = &aoc2025.Day2{}
 			case 3:
-				problem = &Day3{}
+				problem = &aoc2025.Day3{}
 			case 4:
-				problem = &Day4{}
+				problem = &aoc2025.Day4{}
 			default:
 				return fmt.Errorf("no solution available for day %d", dayArg)
 			}
