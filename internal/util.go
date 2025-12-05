@@ -43,3 +43,19 @@ func (p Position2D) Neighbors(min_i *int64, max_i *int64, min_j *int64, max_j *i
 		}
 	}
 }
+
+type Rang struct {
+	from int64
+	to   int64
+}
+
+func (r0 Rang) Union(r1 Rang) (Rang, *Rang) {
+	if r0.to < r1.from || r0.from > r1.to {
+		return r0, &r1
+	}
+
+	return Rang{
+		from: min(r0.from, r1.from),
+		to:   max(r0.to, r1.to),
+	}, nil
+}

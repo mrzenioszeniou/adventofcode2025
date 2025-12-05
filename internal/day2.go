@@ -7,16 +7,11 @@ import (
 )
 
 type Day2 struct {
-	rangs []rang
-}
-
-type rang struct {
-	from int64
-	to   int64
+	rangs []Rang
 }
 
 func (d *Day2) Parse(input string) error {
-	var rangs []rang
+	var rangs []Rang
 	for rangeStr := range strings.SplitSeq(input, ",") {
 		numStrs := strings.Split(rangeStr, "-")
 		if len(numStrs) != 2 {
@@ -33,7 +28,7 @@ func (d *Day2) Parse(input string) error {
 			return fmt.Errorf("invalid range %q encountered: %w", rangeStr, err)
 		}
 
-		rangs = append(rangs, rang{
+		rangs = append(rangs, Rang{
 			from: from,
 			to:   to,
 		})

@@ -29,6 +29,8 @@ func main() {
 				problem = &aoc2025.Day3{}
 			case 4:
 				problem = &aoc2025.Day4{}
+			case 5:
+				problem = &aoc2025.Day5{}
 			default:
 				return fmt.Errorf("no solution available for day %d", dayArg)
 			}
