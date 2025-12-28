@@ -1,6 +1,9 @@
 package adventofcode2025
 
-import "iter"
+import (
+	"iter"
+	"math"
+)
 
 type Position2D struct {
 	I int64
@@ -58,4 +61,19 @@ func (r0 Rang) Union(r1 Rang) (Rang, *Rang) {
 		from: min(r0.from, r1.from),
 		to:   max(r0.to, r1.to),
 	}, nil
+}
+
+type Position3D struct {
+	Position2D
+	K int64
+}
+
+func (thisPos Position3D) Euclidian(thatPos Position3D) float64 {
+	var distance float64
+
+	distance += math.Pow(float64(thisPos.I-thatPos.I), 2)
+	distance += math.Pow(float64(thisPos.J-thatPos.J), 2)
+	distance += math.Pow(float64(thisPos.K-thatPos.K), 2)
+
+	return math.Pow(distance, 0.5)
 }
